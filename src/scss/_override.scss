@@ -1,0 +1,120 @@
+input[type='radio'] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid darkgray;
+    outline: none;
+
+    &:hover {
+        box-shadow: 0 0 5px 0px $baseColor;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        width: 60%;
+        height: 60%;
+        margin: 20% auto;
+        border-radius: 50%;
+    }
+
+    &:checked:before {
+        background: $baseColor;
+    }
+
+    &:checked {
+        border: 1px solid $baseColor !important;
+    }
+}
+
+.btn {
+    background: $baseColor;
+    color: white;
+    text-transform: uppercase;
+}
+
+.btn, .input-box {
+    border-radius: 2px;
+    height: 50px;
+}
+
+label {
+    color: #838383;
+}
+
+.form-control {
+    border: 1px solid #dedede;
+    border-radius: 2px;
+
+    &:focus {
+        box-shadow: 0 0 5px 0px $baseColor;
+    }
+}
+
+input[type="text"], input[type="email"], input[type="search"], input[type="tel"], select {
+    &:focus {
+        border-color: $baseColor;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px $baseColor;
+        outline: 0 none;
+    }
+}
+
+select.decorated option:hover {
+    box-shadow: 0 0 10px 100px $baseColor inset;
+}
+
+.form-check-inline {
+    margin-right: 50px;
+}
+
+th {
+    font-size: 14px;
+    color: #545454;
+    text-transform: uppercase;
+}
+
+th, td {
+    padding-left: 40px !important;
+}
+
+td {
+    font-size: 14px;
+    color: $secondaryGray;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: none;
+}
+
+.card {
+    max-height: 100vh;
+    margin: 20px;
+    border-radius: 2px;
+}
+
+.bg-dark {
+    background: $navbar !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+body {
+    --table-width: 100%;
+    background: $secondaryGray;
+}
+
+tbody {
+    display: block;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+thead, tbody tr {
+    display: table;
+    width: var(--table-width);
+    table-layout: fixed;
+}
