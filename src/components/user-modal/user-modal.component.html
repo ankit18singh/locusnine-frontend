@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <button type="button" class="close pull-right" (click)="this.bsModalRef.hide()" aria-label="Close">
+        <span aria-hidden="true"><img src class="close-button"></span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <p class="modal-title">{{title}}</p>
+
+    <div class="form-group">
+        <input type="text" class="form-control input-box" id="name" name="name" maxlength="30" required
+               [(ngModel)]="user.name" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+        <input type="email" class="form-control input-box" id="email" name="email" maxlength="50" required
+               [(ngModel)]="user.emailID" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ADMIN" value="ADMIN"
+                   [(ngModel)]="user.roleType">
+            <label class="form-check-label" for="ADMIN">Admin</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="CUSTOMER_EXECUTIVE"
+                   value="CUSTOMER_EXECUTIVE" [(ngModel)]="user.roleType">
+            <label class="form-check-label" for="CUSTOMER_EXECUTIVE">Customer Executive</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <select id="status" class="form-control input-box" [(ngModel)]="user.status">
+            <option value="" disabled selected>Select Status</option>
+            <option value="ACTIVE" selected>Active</option>
+            <option value="IN_ACTIVE">In Active</option>
+            <option value="PENDING">Pending</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input type="tel" class="form-control input-box" id="mobile" name="mobile" maxlength="10" required
+               [(ngModel)]="user.mobile" placeholder="Mobile Number (Optional)">
+    </div>
+    <button (click)="save()" class="btn btn-block btn-warning" *ngIf="!editMode">Add User</button>
+    <button (click)="update()" class="btn btn-block btn-warning" *ngIf="editMode">Update User</button>
+</div>

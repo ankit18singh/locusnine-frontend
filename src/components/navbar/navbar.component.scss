@@ -1,0 +1,56 @@
+@import "../../scss/variables";
+
+.active-tab {
+    color: $baseColor !important;
+}
+
+.nav-item {
+    padding: 0 20px;
+    color: #fff;
+}
+
+nav {
+    font-size: 14px;
+}
+
+.nav-link {
+    img {
+        height: 25px;
+        width: 25px;
+        margin-right: 8px;
+    }
+}
+
+.nav-link:not(.active-tab) {
+    color: #fff !important;
+}
+
+.navbar-brand {
+    padding: 0 0 8px !important;
+}
+
+img {
+    &.logo {
+        content: url($baseAssetPath + "Logo.svg");
+    }
+
+    &.dashboard {
+        content: url($baseAssetPath + "ico_dashboard.svg");
+    }
+
+    &.user {
+        content: url($baseAssetPath + "ico_users.svg");
+    }
+
+    &.admin-user {
+        content: url($baseAssetPath + "ico_user.svg");
+    }
+
+    &.session {
+        content: url($baseAssetPath + "ico_sessionmanager.svg");
+    }
+
+    &.notification {
+        content: url($baseAssetPath + "ico_notification.svg");
+    }
+}

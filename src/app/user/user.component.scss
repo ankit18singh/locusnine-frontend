@@ -1,0 +1,138 @@
+@import "../../scss/variables";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    margin-right: 20px;
+    width: 100%;
+}
+
+.add-user {
+    width: 100%;
+    font-size: 14px;
+
+    button {
+        color: white;
+        height: 38px;
+        font-size: 16px;
+        text-transform: none;
+
+        img {
+            content: url($baseAssetPath + "ico_add.svg");
+            margin-right: 8px;
+        }
+
+    }
+}
+
+.input-group-addon {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.padding-vertical {
+    padding: 10px 0;
+}
+
+.user {
+    font-size: 20px;
+    font-weight: 200;
+    padding-left: 30px;
+
+    img {
+        margin-right: 8px;
+    }
+}
+
+.filter-wrapper {
+    display: flex;
+}
+
+.user-icon {
+    content: url($baseAssetPath + "ico_users_nav.svg");
+}
+
+.input-group {
+    input {
+        font-size: 12px;
+        font-weight: 200;
+        width: 260px;
+        padding: 18px;
+    }
+
+    img {
+        content: url($baseAssetPath + "ico_search.svg");
+    }
+}
+
+.name-wrapper {
+    display: flex;
+
+    img {
+        margin-left: 8px;
+        content: url($baseAssetPath + "ico_sorting.svg");
+    }
+}
+
+td {
+    &.edit-action {
+        text-align: center;
+    }
+    img {
+        content: url($baseAssetPath + "ico_edit.svg");
+    }
+}
+
+.status-wrapper {
+    display: flex;
+
+    img {
+        &.ACTIVE {
+            content: url($baseAssetPath + "ico_active.svg");
+            margin-right: 8px;
+        }
+
+        &.IN_ACTIVE {
+            content: url($baseAssetPath + "ico_inactive.svg");
+            margin-right: 8px;
+        }
+
+        &.PENDING {
+            content: url($baseAssetPath + "ico_pending.svg");
+            margin-right: 8px;
+        }
+    }
+}
+
+button {
+    background: $baseColor !important;
+}
+
+.no-user-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+
+    img {
+        width: 200px;
+        height: 200px;
+        content: url($baseAssetPath + "no-user.png");
+    }
+
+    .dummy-add {
+        background: $baseColor;
+        padding: 8px;
+        color: white;
+    }
+}
+
+.table, .table-responsive-sm {
+    max-height: 300px !important;
+}

@@ -1,0 +1,69 @@
+<div class="card">
+    <div class="header">
+        <div class="user padding-vertical">
+            <img src class="user-icon"/> Users
+        </div>
+        <div class="filter-wrapper">
+            <div class="search-box padding-vertical">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" [(ngModel)]="filters.query"
+                           (keyup.enter)="searchItem()"/>
+                    <div class="input-group-addon">
+                        <img src class="search-icon">
+                    </div>
+                </div>
+            </div>
+            <div class="add-user padding-vertical">
+                <button (click)="addUser()" class="btn bg-warning">
+                    <img src/> Add User
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div infiniteScroll [infiniteScrollThrottle]="500" (scrolled)="paginateList()">
+        <table class="table table-responsive-sm table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>
+                        <span class="name-wrapper">
+                            Name <img src class="sorting-icon" (click)="searchItem()">
+                        </span>
+                    </th>
+                    <th>Email</th>
+                    <th>Role Type</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of items;">
+                    <td>{{user.name}}</td>
+                    <td>{{user.emailID}}</td>
+                    <td>{{user.roleType | enumFormatter}}</td>
+                    <td>
+                        <div class="status-wrapper">
+                            <img src class="{{user.status}}"/>
+                            {{user.status | enumFormatter}}
+                        </div>
+                    </td>
+                    <td class="edit-action">
+                        <img src (click)="editUser(user.id)"/>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot *ngIf="!items || !items.length">
+                <tr>
+                    <td colspan="12">
+                        <div class="no-user-wrapper">
+                            <img src class="no-user">
+                            <p>Please click on the <span class="dummy-add"> + Add User</span> button on the top to
+                                add
+                                a few to get started.</p>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
