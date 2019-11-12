@@ -45,4 +45,6 @@
     </div>
     <button (click)="save()" class="btn btn-block btn-warning" *ngIf="!editMode">Add User</button>
     <button (click)="update()" class="btn btn-block btn-warning" *ngIf="editMode">Update User</button>
+
+    <div class="delete-user" (click)="delete()" *ngIf="editMode">Or Click here to delete the user</div>
 </div>

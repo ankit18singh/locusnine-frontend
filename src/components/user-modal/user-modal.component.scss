@@ -22,3 +22,14 @@
 input {
     font-weight: 300;
 }
+
+.delete-user {
+    text-align: center;
+    cursor: grab;
+    color: red;
+    padding-top: 10px;
+
+    &:hover {
+        color: darkred;
+    }
+}

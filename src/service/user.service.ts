@@ -47,7 +47,7 @@ export class UserService {
     }
 
     /**
-     * Method to send HTTP request to update a exisiting user.
+     * Method to send HTTP request to update a existing user.
      * @param user
      */
     async update(user: User) {
@@ -65,5 +65,17 @@ export class UserService {
     async show(user: User) {
         const data: any = await this.http.get(`/user/show/${user.id}`).toPromise();
         user.bind(data);
+    }
+
+    /**
+     * Method to send HTTP request to delete a existing user.
+     * @param id
+     */
+    async delete(id: number) {
+        try {
+            await this.http.delete(`/user/delete/${id}`).toPromise();
+        } catch (e) {
+            throw e;
+        }
     }
 }

@@ -53,4 +53,9 @@ export class UserModalComponent implements OnInit {
         const promise = this.userService.update(this.user);
         await this.resolveAndDismiss(promise);
     }
+
+    async delete() {
+        const promise = this.userService.delete(this.user.id);
+        await this.resolveAndDismiss(promise);
+    }
 }
